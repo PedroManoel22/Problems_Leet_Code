@@ -31,6 +31,4 @@ if __name__ == "__main__":
     # Exemplo 2:
     nums1 = [1,2]
     nums2 = [3,4]
-    mediana(nums1, nums2)
-
-
+    mediana(nums1, nums2)   
