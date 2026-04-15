@@ -25,28 +25,31 @@
 # -109 <= nums[i] <= 109
 # -109 <= target <= 109
 # Só existe uma resposta válida.
+from typing import List
 
-def two_sum(nums: list[int], target: int) -> list[int]:
-    mapa = {}
 
-    for i, num in enumerate(nums):
-        print(f"i: {i}\nnum: {num}")
-        complemento = target - num
-        
-        if complemento in mapa:
-            return [mapa[complemento], i]
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
 
-        mapa[num] = i
+        mapa = {}
 
-    return []
+        for i, num in enumerate(nums):
+            complement = target - num
+            
+            if complement in mapa:
+                return [mapa[complement], i]
+
+            mapa[num] = i
+
+        return []
+
 
 if __name__ == "__main__":
-    # exemplo 1
-    nums = [2,7,11,15]
-    target = 9
-    print(two_sum(nums, target)) # OK -> [0, 1]
-
-    Entrada = [3,2,4]
-    alvo = 6
-    print(two_sum(Entrada, alvo))
-    # S:
+    s1 = Solution()
+    tests = [([2,7,11,15], 9),
+            ([3,2,4], 6),
+            ([3, 3], 6)]
+    
+    for nums, target in tests:
+        result = s1.twoSum(nums, target)
+        print(f"Input: {nums}, Target: {target} -> result: {result}")
