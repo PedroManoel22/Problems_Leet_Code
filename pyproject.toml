@@ -1,0 +1,12 @@
+[tool.ruff]
+# Seleciona as regras base (E = Error, F = Pyflakes, I = Isort)
+select = ["E", "F", "I"]
+ignore = []
+
+# Define a versão do Python e o limite de caracteres por linha
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
